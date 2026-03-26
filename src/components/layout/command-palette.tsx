@@ -66,6 +66,7 @@ export function CommandPalette() {
     <div className="fixed inset-0 z-[100]">
       <div
         className="fixed inset-0 bg-black/50"
+        aria-hidden="true"
         onClick={() => setOpen(false)}
       />
       <div className="fixed left-1/2 top-[20%] w-full max-w-lg -translate-x-1/2">

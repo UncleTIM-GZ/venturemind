@@ -16,7 +16,7 @@ export default function DashboardLayout({
         <AppSidebar />
         <SidebarInset>
           <TopBar />
-          <main className="flex-1 overflow-auto p-6">{children}</main>
+          <main id="main-content" role="main" className="flex-1 overflow-auto p-6">{children}</main>
         </SidebarInset>
         <AiChatPanel />
         <CommandPalette />

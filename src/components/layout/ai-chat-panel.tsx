@@ -32,6 +32,7 @@ export function AiChatPanel() {
       <Button
         onClick={() => setIsOpen(true)}
         size="icon"
+        aria-label="Open AI chat assistant"
         className="fixed bottom-6 right-6 z-50 h-12 w-12 rounded-full shadow-lg"
       >
         <Bot className="h-5 w-5" />
@@ -41,6 +42,8 @@ export function AiChatPanel() {
 
   return (
     <div
+      role="dialog"
+      aria-label="AI chat assistant"
       className={cn(
         "fixed bottom-6 right-6 z-50 flex flex-col rounded-xl border border-border bg-card shadow-2xl",
         isExpanded ? "h-[80vh] w-[480px]" : "h-[500px] w-[380px]"
@@ -57,6 +60,7 @@ export function AiChatPanel() {
             size="icon"
             className="h-7 w-7"
             onClick={() => setIsExpanded(!isExpanded)}
+            aria-label={isExpanded ? "Minimize chat" : "Expand chat"}
           >
             {isExpanded ? (
               <Minimize2 className="h-3.5 w-3.5" />
@@ -69,6 +73,7 @@ export function AiChatPanel() {
             size="icon"
             className="h-7 w-7"
             onClick={() => setIsOpen(false)}
+            aria-label="Close chat"
           >
             <X className="h-3.5 w-3.5" />
           </Button>
@@ -129,6 +134,7 @@ export function AiChatPanel() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask VentureMind AI..."
+            aria-label="Chat message input"
             className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
             disabled={isLoading}
           />
@@ -137,6 +143,7 @@ export function AiChatPanel() {
             size="icon"
             className="h-8 w-8"
             disabled={isLoading || !input.trim()}
+            aria-label="Send message"
           >
             <Send className="h-3.5 w-3.5" />
           </Button>
